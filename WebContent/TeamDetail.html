@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script type="text/javascript" src="purl.js"></script>
+<title>Insert title here</title>
+<script>
+$(function() {
+	// URLからIDを取り出す
+	var id = ($.url().param()).id;
+	
+	$.getJSON('/javamarason5km/TeamDetail',{template_id : id}, function(team){
+
+		// チーム名を挿入
+		$("#teamName").text(team.teamName);// idがteamNameのタグにチーム名を挿入
+		// 本拠地名を挿入
+		$("#homeTown").text(team.headquarters);
+		// 発足を挿入
+		$("#inauguration").text(team.inauguration);
+		// 歴史を挿入
+		$("#history").text(team.history);
+		
+	});
+});
+</script>
+</head>
+<body>
+	<div>球団名</div>
+	<pre id="teamName"></pre>
+	<!-- 本拠地 -->
+	<div>本拠地</div>
+	<pre id="homeTown"></pre>
+	<div>発足</div>
+	<pre id="inauguration"></pre>
+	<div>歴史</div>
+	<pre id="history"></pre>
+	<pre></pre>
+	<a href="TeamList.html">戻る</a>
+</body>
+</html>

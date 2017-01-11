@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="utf-8">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+
+<script>
+
+$(function m() {
+
+$.getJSON('/javamarason5km/TeamList', function(data){
+
+ var
+
+      ulObj = $("#demo"),
+
+      len = data.length;
+
+
+
+    for(var i = 0; i < len; i++) {
+
+      ulObj.append($("<a>").attr({"href":"javascript:void(0)"}).attr({"id":data[i].id}).attr({"onClick":"move(this)"}).text(data[i].team_name)).append($("<br>"));
+
+    }
+
+  });
+
+});
+
+</script>
+<script type="text/javascript">
+function move(obj) {
+	document.getElementById("demo").style.display="none";
+$.getJSON('/javamarason5km/TeamDatail',{js : obj.id}, function(data){
+
+ var
+		id=obj.id;
+      ulObj = $("#de"),
+      len = data.length;
+
+    for(var i = 0; i < len; i++) {
+
+      ulObj.append($("<div>").text("球団名"))
+      .append($("<pre>").attr({"id":data[i].id}).text(data[i].team_name))
+      .append($("<div>").text("本拠地"))
+      .append($("<pre>").attr({"id":data[i].id}).text(data[i].headquarters))
+      .append($("<div>").text("発足"))
+      .append($("<pre>").attr({"id":data[i].id}).text(data[i].inauguration))
+      .append($("<div>").text("歴史"))
+      .append($("<pre>").attr({"id":data[i].id}).text(data[i].history)).append($("<br>"));
+
+    }
+
+  });
+
+}
+</script>
+
+
+</head>
+
+<body>
+
+<div id="demo"></div>
+
+ 
+<div id="de"></div>
+</body>
+
+
+
+</html>
