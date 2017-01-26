@@ -21,7 +21,6 @@ public class TeamDetail extends HttpServlet {
 
 	public TeamDetail() {
 		super();
-		//FIXME: ↑こういうコメントを残すというのはプロっぽくない＜削除しました。
 	}
 
 	/**
@@ -38,9 +37,7 @@ public class TeamDetail extends HttpServlet {
 		DBmanager dbm = new DBmanager();
 		
 		dbm.selectTeam(json);
-		//FIXME: json変数を引数に取るメソッドを作って、DBmanager側で処理するべき＜DBmanager側にメソッドを作成しました。
-		//FIXME: このメソッドはリストを返すはずなんだけど、、、何をしているのかな。＜削除しました。
-		String text = JSON.encode(dbm.getTeam());//FIXME: せめてGetter使いましょうよ。。。＜使いました。
+		String text = JSON.encode(dbm.getTeam());
 
 		response.setContentType("application/json;charset=UTF-8");
 		PrintWriter out = response.getWriter();
