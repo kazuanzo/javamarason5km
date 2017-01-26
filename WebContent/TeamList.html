@@ -4,18 +4,6 @@
 		<meta charset="utf-8">
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
 <script>
-/* $(function() {
-$.getJSON('/javamarason5km/TeamList', function(data){
-$.each(data,function(){
-	 $("#demo").append($("<a>")
-				.attr({"href":"./TeamDetail.html?id=" + data[this].id})
-				.text(data[this].teamName)).append($("<br/>"));
-	}
-});
-
-});
-*/
-
  $(function() {
 	// サーブレットからチーム一覧を非同期で取得
 	
@@ -29,20 +17,6 @@ $.each(data,function(){
 		});
 	});
 });
-
-/*  $(function() {
-// サーブレットからチーム一覧を非同期で取得
-$.getJSON('/javamarason5km/TeamList', function(data){
-	var len = data.length;
-	//
-	//チームのリストの数だけaタグを追加
-	for(var i = 0; i < len; i++) {
-		 $("#demo").append($("<a>")
-				.attr({"href":"./TeamDetail.html?id=" + data[i].id})
-				.text(data[i].teamName)).append($("<br/>"));
-	}
-});
-});  */
 </script>
 	</head>
 	<body>

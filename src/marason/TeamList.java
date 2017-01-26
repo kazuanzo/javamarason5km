@@ -22,9 +22,9 @@ public class TeamList extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public TeamList() {
-        super();
-    }
+	public TeamList() {
+		super();
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)

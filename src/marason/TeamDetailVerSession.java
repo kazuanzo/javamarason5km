@@ -16,7 +16,6 @@ import net.arnx.jsonic.JSON;
  * Servlet implementation class TeamDetail
  */
 @WebServlet("/TeamDetailVerSession")
-//FIXME: "2"って、何をするサーブレットなのかな・・・？一応、提出物なので、意味のわかる命名をしましょう。＜名称変更しました。
 public class TeamDetailVerSession extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
