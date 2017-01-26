@@ -18,27 +18,28 @@ public class DBmanager {
 	private Connection connection;
 	private Statement statement;
 	private ResultSet rs;
-	
+	//FIXME: 謎の配列h...<削除しました。
 
 	ArrayList<Team> teamlist = new ArrayList<>();
 	Team team = new Team();
 
 	public ArrayList<Team> allTeam() {
+		//FIXME: 定数はここではなく、変数宣言時にセットされるべき<修正しました。
 
 		try {
 			
-			Class.forName(driver);
+			Class.forName(driver);//FIXME: この行意味ある？<Driver自身をDriverManagerに登録する処理のため必要なようです。
 
 			// DB接続処理
 			connection = DriverManager.getConnection(url, user, password);
 			statement = connection.createStatement();
 
-
+			//FIXME: ここでnullを入れるのはなぜ？＜修正しました。
 			// sql文
 			rs = statement.executeQuery(sql + "id;");
 
 			while (rs.next()) {
-				Team team = new Team();
+				Team team = new Team();//FIXME: 変数名がteaでは、別の意味（お茶）になる＜修正しました。
 				team.setId(rs.getInt("id"));
 				team.setTeamName(rs.getString("team_name"));
 				team.setLeagueName(rs.getString("league_name"));
@@ -90,6 +91,7 @@ public class DBmanager {
 		return team;
 		
 	}
+	 //FIXME: 謎の空白行＜修正しました
 	
 	public ArrayList<Team> getTeamlist() {
 		return teamlist;

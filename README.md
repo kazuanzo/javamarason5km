@@ -1,0 +1,3 @@
+# javamarason5km
+・Teamlist.htmlがjquery.url.jsを使用してTeamDetail.htmlでURLからパラメータを取得しました。
+・TeamListVerSession.htmlがセッションストレージにidを格納してTeamDetailVerSession.htmlに受け渡しました。
