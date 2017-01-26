@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import marason.domain.Team;
 
 public class DBmanager {
+	//FIXME: このクラスがサーブレットと同じパッケージにあるのは不自然。
 	private String driver = "com.mysql.jdbc.Driver";
 	private String sql = "select * from baseball_teams where id =";
 	private String url = "jdbc:mysql://localhost/data1";;
