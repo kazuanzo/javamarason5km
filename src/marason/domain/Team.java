@@ -1,8 +1,6 @@
 package marason.domain;
 
 public class Team {
-	//FIXME: このクラスがサーブレットと同じパッケージにあるのは不自然。＜移動しました。
-	//FIXME: セッターとゲッターがあるのに、なんでprivateではないの？＜修正しました
 	private int id;
 	private String leagueName;
 	private String teamName;

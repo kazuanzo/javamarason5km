@@ -13,7 +13,7 @@ $(function() {
 	$.getJSON('/javamarason5km/TeamDetail',{template_id : id}, function(team){
 
 		// チーム名を挿入
-		$("#teamName").text(team.teamName);// idがteamNameのタグにチーム名を挿入
+		$("#teamName").text(team.teamName);
 		// 本拠地名を挿入
 		$("#homeTown").text(team.headquarters);
 		// 発足を挿入
