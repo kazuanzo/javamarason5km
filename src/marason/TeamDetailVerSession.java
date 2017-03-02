@@ -1,4 +1,5 @@
 package marason;
+//FIXME: パッケージ名のスペルが違います。それと、サーブレットクラスは、servletパッケージなど、別のパッケージに入れた方がいいのでは？
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,7 +17,7 @@ import net.arnx.jsonic.JSON;
  * Servlet implementation class TeamDetail
  */
 @WebServlet("/TeamDetailVerSession")
-//FIXME: "2"って、何をするサーブレットなのかな・・・？一応、提出物なので、意味のわかる命名をしましょう。＜名称変更しました。
+//FIXME: "Ver"Sessionって、どういう意味・・・？意味の通じないクラス名は適切ではありません。
 public class TeamDetailVerSession extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -39,7 +40,7 @@ public class TeamDetailVerSession extends HttpServlet {
 
 		String text = JSON.encode(dbm.getTeam());
 
-		response.setContentType("application/json;charset=UTF-8");
+		response.setContentType("application/json;charset=UTF-8"); //FIXME: この値は他のサーブレットでも使っていますよね。こういうものは定数クラスを作成し、public static finalで宣言した変数を使用した方がいいです。
 		PrintWriter out = response.getWriter();
 		out.print(text);
 	}
