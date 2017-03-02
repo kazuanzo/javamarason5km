@@ -1,4 +1,4 @@
-package marason.servlet;
+package marathon.servlet;
 //FIXME: パッケージ名のスペルが違います。それと、サーブレットクラスは、servletパッケージなど、別のパッケージに入れた方がいいのでは？
 
 import java.io.IOException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import marason.dao.DBmanager;
+import marathon.dao.DBmanager;
 import net.arnx.jsonic.JSON;
 
 /**
@@ -35,19 +35,13 @@ public class TeamDetailVerSession extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		//FIXME: 元に戻してください
-		String searchType = request.getParameter("search_type");
+		String json = request.getParameter("template_id");
 		DBmanager dbm = new DBmanager();
-		if(searchType.equals("")){
-			dbm.allTeam();	
-		}else if(searchType.equals("one")){
-			String json = request.getParameter("template_id");
-			dbm.selectTeam(json);
-		}
+		dbm.selectTeam(json);
 
 		String text = JSON.encode(dbm.getTeam());
 
-		response.setContentType("application/json;charset=UTF-8"); //FIXME: この値は他のサーブレットでも使っていますよね。こういうものは定数クラスを作成し、public static finalで宣言した変数を使用した方がいいです。
+		response.setContentType("application/json;charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		out.print(text);
 	}

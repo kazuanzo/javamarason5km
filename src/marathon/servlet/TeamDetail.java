@@ -1,4 +1,4 @@
-package marason.servlet;
+package marathon.servlet;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import marason.dao.DBmanager;
+import marathon.dao.DBmanager;
 import net.arnx.jsonic.JSON;
 
 /**

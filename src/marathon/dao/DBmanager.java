@@ -1,4 +1,4 @@
-package marason.dao;
+package marathon.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import marason.domain.Team;
+import marathon.domain.Team;
 
 public class DBmanager {
 	private String driver = "com.mysql.jdbc.Driver";

@@ -1,4 +1,4 @@
-package marason.domain;
+package marathon.domain;
 
 public class Team {
 	private int id;

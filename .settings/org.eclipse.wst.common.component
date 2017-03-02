@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="javamarason5km">
+    <wb-module deploy-name="javamarathon5km">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="javamarason5km"/>
-        <property name="java-output-path" value="/javamarason5km/build/classes"/>
+        <property name="context-root" value="javamarathon5km"/>
+        <property name="java-output-path" value="/javamarathon5km/build/classes"/>
     </wb-module>
 </project-modules>
