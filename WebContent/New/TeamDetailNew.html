@@ -9,7 +9,7 @@ $(function() {
 	// セッションストレージから格納されたチームIDをひっぱてくる
 	var id = window.sessionStorage.getItem("test_key");
 	
-	$.getJSON('/javamarathon5km/TeamSearchServlet',{search_type : id}, function(team){
+	$.getJSON('/javamarathon5km/TeamSearchServlet',{team_id : id,search_type:"team_detail"}, function(team){
 
 		// チーム名を挿入
 		$("#teamName").text(team.teamName);// idがteamNameのタグにチーム名を挿入

@@ -35,22 +35,24 @@ public class TeamSearchServlet extends HttpServlet {
 		//FIXME: 以下を追加開発
 				
 				//Json形式の値
-				String jsonValue;
+				String jsonValue = null;
 				
 				//リクエストパラメータから値を取得
 				String searchType = request.getParameter("search_type");
+				String id=request.getParameter("team_id");
 				DBmanager dbm = new DBmanager();
+
 				
-				//値からチームリストかチーム詳細かを判断
-				if(searchType==null){
+				//"searchType"から全てのチームかチーム詳細かを判断
+				if(searchType.equals("all_team")){
 					//全ての野球チームを取得
 					dbm.allTeam();
 					
 					//値をJson形式にして格納
 					jsonValue = JSON.encode(dbm.getTeamlist());
-				}else {
+				}else if(searchType.equals("team_detail")){
 					//IDを基に野球チームを取得
-					dbm.selectTeam(searchType);
+					dbm.selectTeam(id);
 					
 					//値をJson形式にして格納
 					jsonValue = JSON.encode(dbm.getTeam());
