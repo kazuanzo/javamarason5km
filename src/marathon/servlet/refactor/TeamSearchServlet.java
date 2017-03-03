@@ -20,29 +20,20 @@ import net.arnx.jsonic.JSON;
 public class TeamSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TeamSearchServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+   
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//FIXME: 以下を追加開発
 				
-				//Json形式の値
-				String jsonValue = null;
+
 				
 				//リクエストパラメータから値を取得
 				String searchType = request.getParameter("search_type");
 				String id=request.getParameter("team_id");
 				DBmanager dbm = new DBmanager();
 
-				
+				//Json形式の値
+				String jsonValue = null;				
 				//"searchType"から全てのチームかチーム詳細かを判断
 				if(searchType.equals("all_team")){
 					//全ての野球チームを取得
@@ -60,7 +51,7 @@ public class TeamSearchServlet extends HttpServlet {
 
 				
 				//Javaのストリームの「Content-Type」を設定
-				response.setContentType(Constant.ContentType); //FIXME: この値は他のサーブレットでも使っていますよね。こういうものは定数クラスを作成し、public static finalで宣言した変数を使用した方がいいです。
+				response.setContentType(Constant.CONTENT_TYPE); //FIXME: この値は他のサーブレットでも使っていますよね。こういうものは定数クラスを作成し、public static finalで宣言した変数を使用した方がいいです。
 				//設定したJavaのストリームを取得
 				PrintWriter out = response.getWriter();
 				//Javaのストリームを利用しJsonの値を出力

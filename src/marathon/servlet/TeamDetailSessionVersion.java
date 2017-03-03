@@ -16,16 +16,16 @@ import net.arnx.jsonic.JSON;
 /**
  * Servlet implementation class TeamDetail
  */
-@WebServlet("/TeamDetailVerSession")
+@WebServlet("/TeamDetailSessionVersion")
 //FIXME: "Ver"Sessionって、どういう意味・・・？意味の通じないクラス名は適切ではありません。
-public class TeamDetailVerSession extends HttpServlet {
+public class TeamDetailSessionVersion extends HttpServlet {
 	//TeamDetailServlet_SessionVersion
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public TeamDetailVerSession() {
+	public TeamDetailSessionVersion() {
 		super();
 	}
 

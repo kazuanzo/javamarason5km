@@ -8,7 +8,6 @@
 	// サーブレットからチーム一覧を非同期で取得
 	
 	$.getJSON('/javamarathon5km/TeamList', function(data){
-
 		//チームのリストの数だけaタグを追加
 		jQuery.each(data,function(i,val) {
 			$("#demo").append($("<a>")

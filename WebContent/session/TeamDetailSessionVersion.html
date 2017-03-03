@@ -9,7 +9,7 @@ $(function() {
 	// セッションストレージから格納されたチームIDをひっぱてくる
 	var id = window.sessionStorage.getItem("test_key");
 	
-	$.getJSON('/javamarathon5km/TeamDetailVerSession',{template_id : id}, function(team){
+	$.getJSON('/javamarathon5km/TeamDetailSessionVersion',{template_id : id}, function(team){
 
 		// チーム名を挿入
 		$("#teamName").text(team.teamName);// idがteamNameのタグにチーム名を挿入
@@ -35,6 +35,6 @@ $(function() {
 	<div>歴史</div>
 	<pre id="history"></pre>
 	<pre></pre>
-	<a href="TeamListVerSession.html">戻る</a>
+	<a href="TeamListSessionVersion.html">戻る</a>
 </body>
 </html>
